@@ -320,7 +320,12 @@ public class MultiImageSelectorFragment extends Fragment {
                     e.printStackTrace();
                 }
                 if (mTmpFile != null && mTmpFile.exists()) {
-                    Uri imageUri = FileProvider.getUriForFile(getContext(), getContext().getPackageName() + ".mis.fileprovider", mTmpFile);//通过FileProvider创建一个content类型的Uri
+                    Uri imageUri = null;
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        imageUri = FileProvider.getUriForFile(getContext(), getContext().getPackageName() + ".mis.fileprovider", mTmpFile);//通过FileProvider创建一个content类型的Uri
+                    } else {
+                        imageUri = Uri.fromFile(mTmpFile);
+                    }
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
                     startActivityForResult(intent, REQUEST_CAMERA);
                 } else {

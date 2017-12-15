@@ -19,12 +19,12 @@ Image selector for Android device. Support single choice and multi-choice.
 Add module `multi-image-selector` as your dependence. in your `build.gradle` :
 ```java
 repositories {
-    maven { url "https://jitpack.io" }
+    jcenter()
 }
 
 dependencies {
     //compile 'com.github.lovetuzitong:MultiImageSelector:1.2'
-    compile 'com.hx.multi-image-selector:multi-image-selector:1.2.1'
+    compile 'com.hx.multi-image-selector:multi-image-selector:1.2.2'
 }
 ```
 

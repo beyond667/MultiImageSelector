@@ -19,11 +19,12 @@
 把模块 `multi-image-selector` 作为你的项目依赖添加到工程中. 在项目`build.gradle` 中:
 ```java
 repositories {
-    maven { url "https://jitpack.io" }
+    jcenter()
 }
 
 dependencies {
-    compile 'com.github.lovetuzitong:MultiImageSelector:1.2'
+    //compile 'com.github.lovetuzitong:MultiImageSelector:1.2'
+    compile 'com.hx.multi-image-selector:multi-image-selector:1.2.2'
 }
 ```
 
