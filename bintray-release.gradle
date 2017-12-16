@@ -34,9 +34,9 @@ javadoc {
 
 afterEvaluate {
     Task bintrayUploadTask = tasks.findByName('bintrayUpload')
-    Task generatePomFileForReleasePublicationTask = tasks.findByName('generatePomFileForReleasePublication')
-    if (bintrayUploadTask != null && generatePomFileForReleasePublicationTask != null) {
-        bintrayUploadTask.dependsOn generatePomFileForReleasePublicationTask
+    Task uploadArchivesTask = tasks.findByName('uploadArchives')
+    if (bintrayUploadTask != null && uploadArchivesTask != null) {
+        bintrayUploadTask.dependsOn uploadArchivesTask
     }
 }
 
